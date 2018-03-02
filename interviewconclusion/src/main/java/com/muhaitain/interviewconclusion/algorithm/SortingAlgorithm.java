@@ -210,6 +210,7 @@ public class SortingAlgorithm {
 
     /**
      * java这种递归调用会内存溢出
+     *
      * @param array
      * @param left
      * @param right
@@ -236,6 +237,61 @@ public class SortingAlgorithm {
         array[i] = key;
         quickSort(array, left, i - 1);
         quickSort(array, i + 1, right);
+    }
+
+    /**
+     * 再来看归并排序，其的基本思路就是将数组分成2组A，B，如果这2组组内的数据都是有序的，那么就可以很方便的将这2组数据进行排序。
+     * 如何让这2组组内数据有序了？可以将A，B组各自再分成2组。依次类推，当分出来的小组只有1个数据时，可以认为这个小组组内已经达到了有序，
+     * 然后再合并相邻的2个小组就可以了。这样通过先递归的分解数列，再合并数列就完成了归并排序。
+     * 归并排序的效率是比较高的，设数列长为N，将数列分开成小数列一共要logN步，每步都是一个合并有序数列的过程，时间复杂度可以记为O(N)，故一共为O(N*logN)。
+     *
+     * @param array
+     * @param first
+     * @param last
+     * @param temp
+     */
+    public static void MergeSort(int[] array, int first, int last, int[] temp) {
+        if (first < last) {
+            int middle = (first + last) / 2;
+
+            MergeSort(array, first, middle, temp);
+            MergeSort(array, middle + 1, last, temp);
+            MergeArray(array,first,middle,last,temp);
+        }
+    }
+
+    public static void MergeArray(int[] array, int first, int middle, int last, int[] temp) {
+        int i = first;
+        int m = middle;
+        int j = middle + 1;
+        int n = last;
+        int k = 0;
+        while (i <= m && j <= n) {
+            if (array[i] < array[j]) {
+                temp[k] = array[i];
+                i++;
+                k++;
+            } else {
+                temp[k] = array[j];
+                k++;
+                j++;
+            }
+        }
+
+        while (i <= n) {
+            temp[k] = array[i];
+            i++;
+            k++;
+        }
+
+        while (j <= m) {
+            temp[k] = array[j];
+            k++;
+            j++;
+        }
+        for (int mk = 0; mk < k; mk++) {
+            array[mk] = temp[mk];
+        }
     }
 
 }
