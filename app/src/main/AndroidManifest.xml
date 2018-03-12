@@ -19,7 +19,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SecondActivity" />
 
+        <receiver android:name=".receiver.DemoBroadcastReceiver">
+
+        </receiver>
+        <service android:name=".service.DemoService" />
         <provider
             android:name=".provider.DemoContentProvider"
             android:authorities="com.muhaitain.demoprovider"

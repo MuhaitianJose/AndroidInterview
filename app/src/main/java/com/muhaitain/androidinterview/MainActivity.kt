@@ -1,19 +1,28 @@
 package com.muhaitain.androidinterview
 
-import android.content.BroadcastReceiver
-import android.support.v7.app.AppCompatActivity
+import android.content.ComponentName
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import com.muhaitain.interviewconclusion.JavaCodeTest
-import com.muhaitain.interviewconclusion.algorithm.SortingAlgorithm
+import android.support.v7.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        JavaCodeTest.integerTest()
-        JavaCodeTest.stringTest()
+//        JavaCodeTest.integerTest()
+//        JavaCodeTest.stringTest()
+
+        Start_second_activity.setOnClickListener{
+            var intent = Intent()
+            var com = ComponentName(
+                    this,
+                    SecondActivity::class.java
+            )
+            intent.component = com
+            startActivity(intent)
+        }
     }
 
 }
