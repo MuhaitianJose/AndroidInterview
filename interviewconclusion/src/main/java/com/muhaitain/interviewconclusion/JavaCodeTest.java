@@ -4,6 +4,7 @@ import android.graphics.BitmapFactory;
 import android.util.Log;
 
 import java.util.Date;
+import java.util.HashMap;
 
 /**
  * Created by Muhaitian on 11/03/2018.
@@ -22,7 +23,7 @@ public class JavaCodeTest {
         Log.d(TAG, "integerTest: c==d：" + (c == d));
 
     }
-
+    HashMap
     public static void stringTest(){
         String str="muhaitian";
         String str1="muhaitian";
