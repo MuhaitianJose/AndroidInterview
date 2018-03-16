@@ -23,7 +23,6 @@ public class JavaCodeTest {
         Log.d(TAG, "integerTest: c==d：" + (c == d));
 
     }
-    HashMap
     public static void stringTest(){
         String str="muhaitian";
         String str1="muhaitian";

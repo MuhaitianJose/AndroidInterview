@@ -11,14 +11,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-//        JavaCodeTest.integerTest()
-//        JavaCodeTest.stringTest()
+
 
         Start_second_activity.setOnClickListener{
             var intent = Intent()
             var com = ComponentName(
                     this,
-                    SecondActivity::class.java
+                    PropertyAnimActivity::class.java
             )
             intent.component = com
             startActivity(intent)
