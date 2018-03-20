@@ -26,6 +26,7 @@
 
         </receiver>
         <service android:name=".service.DemoService" />
+        <service android:name=".service.DemoIntentService" />
         <provider
             android:name=".provider.DemoContentProvider"
             android:authorities="com.muhaitain.demoprovider"

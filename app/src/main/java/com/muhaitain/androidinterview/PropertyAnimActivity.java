@@ -5,10 +5,15 @@ import android.animation.ValueAnimator;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Button;
+
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 
 /**
  * Created by Muhaitian on 2018/3/12.
@@ -17,6 +22,8 @@ import android.widget.Button;
 public class PropertyAnimActivity extends AppCompatActivity {
 
     private static final String TAG = PropertyAnimActivity.class.getSimpleName();
+    private HandlerA handlerA;
+    private HandlerB handlerB;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -24,6 +31,32 @@ public class PropertyAnimActivity extends AppCompatActivity {
         setContentView(R.layout.layout_property_anim);
         test_property_anim_ofint();
         objectAnimator_test();
+        testHandler();
+    }
+
+    private void testHandler(){
+        handlerA = new HandlerA();
+        handlerB = new HandlerB();
+//        Log.d(TAG, "testHandler: handlerA.sendEmptyMessage(123)");
+//        handlerA.sendEmptyMessage(123);
+//        Log.d(TAG, "testHandler: handlerB.sendEmptyMessage(123)");
+//        handlerB.sendEmptyMessage(234);
+//        ScheduledExecutorService executorService = Executors.newScheduledThreadPool(5);
+    }
+
+    class HandlerA extends Handler{
+        @Override
+        public void handleMessage(Message msg) {
+            Log.d(TAG, "handleMessageA: what="+msg.what);
+            super.handleMessage(msg);
+        }
+    }
+    class HandlerB extends Handler{
+        @Override
+        public void handleMessage(Message msg) {
+            Log.d(TAG, "handleMessageB: what="+msg.what);
+            super.handleMessage(msg);
+        }
     }
 
     /**
@@ -56,7 +89,7 @@ public class PropertyAnimActivity extends AppCompatActivity {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 int width = (int) animation.getAnimatedValue();
-                Log.d(TAG, "onAnimationUpdate: width=" + width);
+//                Log.d(TAG, "onAnimationUpdate: width=" + width);
                 button.getLayoutParams().width = width;
                 button.requestLayout();
             }

@@ -6,6 +6,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 import android.util.Log;
 
+import org.xml.sax.helpers.DefaultHandler;
+
 /**
  * Created by Muhaitian on 2018/3/9.
  */
@@ -35,6 +37,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         Log.d(TAG, "onUpgrade: oldVersion=" + oldVersion + " | newVersion=" + newVersion);
         db.execSQL(SQL_DELETE_TABLE);
+
         onCreate(db);
     }
 
@@ -44,4 +47,6 @@ public class DbHelper extends SQLiteOpenHelper {
         public static final String COL_AGE = "age";
         public static final String COL_INFO = "info";
     }
+
+
 }
