@@ -2,18 +2,23 @@ package com.muhaitain.androidinterview.provider;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.util.Log;
 
 /**
  * Created by Muhaitian on 2018/3/9.
  */
 
 public class DemoContentProvider extends ContentProvider{
+    private static final String TAG = DemoContentProvider.class.getSimpleName();
     @Override
     public boolean onCreate() {
+        Log.d(TAG, "onCreate: ");
+        Glide
         return false;
     }
 
