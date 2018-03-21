@@ -18,7 +18,6 @@ public class DemoContentProvider extends ContentProvider{
     @Override
     public boolean onCreate() {
         Log.d(TAG, "onCreate: ");
-        Glide
         return false;
     }
 
