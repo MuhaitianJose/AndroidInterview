@@ -3,6 +3,7 @@ package com.muhaitain.androidinterview.provider;
 import android.content.ContentProvider;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
 import android.support.annotation.NonNull;
@@ -18,6 +19,7 @@ public class DemoContentProvider extends ContentProvider{
     @Override
     public boolean onCreate() {
         Log.d(TAG, "onCreate: ");
+        SharedPreferences
         return false;
     }
 
