@@ -10,7 +10,11 @@ import android.graphics.Paint;
 import android.support.annotation.Nullable;
 import android.support.v4.util.LruCache;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 
 import com.muhaitain.androidinterview.entity.Point;
 
@@ -66,5 +70,11 @@ public class PropertyView_01 extends View {
             float y = currentPoint.getY();
             canvas.drawCircle(x, y, RADIUS, mPaint);
         }
+        ScrollView
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        return super.dispatchTouchEvent(event);
     }
 }
