@@ -19,6 +19,7 @@ import android.widget.ScrollView;
 import com.muhaitain.androidinterview.entity.Point;
 
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
 
 /**
  * Created by Muhaitian on 2018/3/16.
@@ -39,10 +40,12 @@ public class PropertyView_01 extends View {
         super(context, attrs);
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setColor(Color.BLUE);
+        LinkedList
     }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
@@ -70,7 +73,7 @@ public class PropertyView_01 extends View {
             float y = currentPoint.getY();
             canvas.drawCircle(x, y, RADIUS, mPaint);
         }
-        ScrollView
+
     }
 
     @Override

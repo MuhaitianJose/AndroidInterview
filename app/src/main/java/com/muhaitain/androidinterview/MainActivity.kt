@@ -18,13 +18,13 @@ class MainActivity : AppCompatActivity() {
             var intent = Intent(this,DemoIntentService::class.java)
             intent.action="muhaitian"
             intent.putExtra("kang","wang")
-            startService(intent)
-//            var com = ComponentName(
-//                    this,
-//                    PropertyAnimActivity::class.java
-//            )
-//            intent.component = com
-//            startActivity(intent)
+
+            var com = ComponentName(
+                    this,
+                    PropertyAnimActivity::class.java
+            )
+            intent.component = com
+            startActivity(intent)
         }
     }
 
