@@ -7,7 +7,9 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 
+import android.os.Build;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.support.v4.util.LruCache;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -40,7 +42,7 @@ public class PropertyView_01 extends View {
         super(context, attrs);
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setColor(Color.BLUE);
-        LinkedList
+//        LinkedList
     }
 
     @Override
@@ -49,6 +51,7 @@ public class PropertyView_01 extends View {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
     @Override
     protected void onDraw(Canvas canvas) {
         if (currentPoint == null) {

@@ -1,6 +1,8 @@
 package com.muhaitain.androidinterview.propertyanimation;
 
 import android.animation.TypeEvaluator;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 
 import com.muhaitain.androidinterview.entity.Point;
 
@@ -8,6 +10,7 @@ import com.muhaitain.androidinterview.entity.Point;
  * Created by Muhaitian on 2018/3/16.
  */
 
+@RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
 public class PointEvaluator implements TypeEvaluator {
     @Override
     public Object evaluate(float fraction, Object startValue, Object endValue) {

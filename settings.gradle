@@ -1,1 +1,1 @@
-include ':app', ':interviewconclusion'
+include ':app', ':interviewconclusion', ':testappone', ':testapptwo'
