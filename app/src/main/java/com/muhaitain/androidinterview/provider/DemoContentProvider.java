@@ -19,7 +19,7 @@ public class DemoContentProvider extends ContentProvider{
     @Override
     public boolean onCreate() {
         Log.d(TAG, "onCreate: ");
-        SharedPreferences
+
         return false;
     }
 

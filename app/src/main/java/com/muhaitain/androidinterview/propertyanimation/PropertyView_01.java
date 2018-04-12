@@ -14,6 +14,7 @@ import android.support.v4.util.LruCache;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -27,7 +28,7 @@ import java.util.LinkedList;
  * Created by Muhaitian on 2018/3/16.
  */
 
-public class PropertyView_01 extends View {
+public class PropertyView_01 extends ViewGroup {
 
     private static final float RADIUS = 70f;//
     private Point currentPoint;
@@ -82,5 +83,15 @@ public class PropertyView_01 extends View {
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
         return super.dispatchTouchEvent(event);
+    }
+
+    @Override
+    protected void onLayout(boolean changed, int l, int t, int r, int b) {
+
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return super.onTouchEvent(event);
     }
 }
